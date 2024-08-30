@@ -1,0 +1,16 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    let reversedNumber = '';
+
+    for(let i = 1; i < x.toString().length + 1; i++){
+        reversedNumber += x.toString().charAt(x.toString().length - i)
+    }
+
+    if(x === +reversedNumber){
+        return true
+    } else return false;
+    
+};
