@@ -1,0 +1,13 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isPalindrome = function(s) {
+    const words = s.replace(/_/g, '').match(/\b\w+\b/g);
+
+    const result = words ? words.join('') : '';
+
+    if(result.toLowerCase() == result.toLowerCase().split('').reverse().join('')){
+        return true
+    } else return false;
+};
