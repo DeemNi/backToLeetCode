@@ -1,0 +1,23 @@
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isHappy = function(n) {
+
+    let luckySet = new Set();
+    
+    while( n!== 1 && !luckySet.has(n)){
+        luckySet.add(n);
+
+        let sum = 0;
+        for(let i = 0; i < n.toString().length; i++){
+            let digit = parseInt(n.toString()[i])
+            sum += Math.pow(digit, 2);
+        }
+        n = sum;
+        
+    }
+
+    return n === 1
+
+};
