@@ -1,0 +1,48 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var isMonotonic = function(nums) {
+
+    let decreaseNumb = true;
+    let increaseNumb = true;
+
+    for(let i = 1; i < nums.length; i++){
+        if(nums[i] > nums[i - 1]){
+            decreaseNumb = false;
+        }
+        if(nums[i] < nums[i - 1]){
+            increaseNumb = false;
+        }
+    }
+
+    return increaseNumb || decreaseNumb;
+
+    // let allEqual = new Set(nums).size === 1;
+
+    // if(allEqual){
+    //     return true;
+    // }
+    
+    // let method;
+    // let i = 0;
+    // while(true && i != nums.length){
+        
+    //     if(nums[i] > nums[i+1]){
+    //         method = [...nums].sort((a,b) => b - a);
+    //         break;
+    //     }else if(nums[i] < nums[i+1]){
+    //         method = [...nums].sort((a,b) => a - b);
+    //         break;
+    //     }else
+    //         {
+    //         i++;
+    //         continue;
+    //     }
+    // }
+
+    // if(JSON.stringify(nums) === JSON.stringify(method)){
+    //     return true
+    // } else return false
+
+};
