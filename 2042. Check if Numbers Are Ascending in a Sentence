@@ -1,0 +1,23 @@
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var areNumbersAscending = function(s) {
+    let numbers = s.match(/\d+/g).map(Number);
+
+    let i = 1;
+
+    while(i < numbers.length){
+
+        if(numbers[i] < numbers[i - 1] || numbers[i] == numbers[i - 1]){
+            return false;
+        }
+
+        i++
+    }
+
+    return true;
+
+};
+
+//45 ms Beats 86.15%
