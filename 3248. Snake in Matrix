@@ -1,0 +1,32 @@
+/**
+ * @param {number} n
+ * @param {string[]} commands
+ * @return {number}
+ */
+var finalPositionOfSnake = function(n, commands) {
+    let NxN = new Array(n);
+
+    for(let i = 0; i < n; i++){
+        NxN[i] = new Array(n);
+        for(let j = 0; j < n; j++){
+            NxN[i][j] = (i * n) + j;
+        }
+    }
+
+    let lr = 0, tb = 0;
+
+    for(let i = 0; i < commands.length; i++){
+        if(commands[i] == 'UP'){
+            tb -= 1;
+        }else if(commands[i] == 'RIGHT'){
+            lr += 1; 
+        }else if(commands[i] == 'DOWN'){
+            tb += 1;
+        }else if(commands[i] == 'LEFT'){
+            lr -= 1; 
+        }
+    }
+
+
+    return NxN[tb][lr];
+};
