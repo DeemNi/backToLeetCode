@@ -1,0 +1,35 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+
+const romanTable = new Map([
+    ['I', 1],
+    ['V', 5],
+    ['X', 10],
+    ['L', 50],
+    ['C', 100],
+    ['D', 500],
+    ['M', 1000],
+]);
+
+var romanToInt = function (s) {
+
+    let i = s.length - 1;
+    let answer = 0;
+
+    while (i >= 0) {
+        let current = romanTable.get(s[i]);
+        let previous = romanTable.get(s[i - 1]);
+
+        if (i > 0 && previous < current) {
+            answer += current - previous;
+            i--;
+        } else {
+            answer += current;
+        }
+        i--;
+    }
+    return answer;
+
+};
