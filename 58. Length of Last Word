@@ -1,0 +1,8 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+    const regex = /\w+$/;
+    return s.trim().match(regex)[0].length;
+};
