@@ -1,0 +1,24 @@
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+var plusOne = function (digits) {
+
+    let i = digits.length - 1;
+
+    while (true) {
+        if (digits[i] == 9) {
+            digits[i] = 0;
+            i--;
+        } else if (i == -1) {
+            digits.unshift(1);
+            break;
+        } else {
+            digits[i] += 1;
+            break;
+        }
+
+    }
+
+    return digits;
+};
