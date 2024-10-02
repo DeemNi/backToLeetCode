@@ -1,0 +1,26 @@
+/**
+ * @param {Object|Array} obj
+ * @return {boolean}
+ */
+var isEmpty = function (obj) {
+
+    let count = 0;
+
+    for (key in obj) {
+        count++;
+    }
+
+    return count == 0 ? true : false;
+    // ---------------------------------------------------- Bad memory but good runtime
+    // return Object.keys(obj).length === 0
+
+    // ---------------------------------------------------- Good memory but 25% runtime
+    // for (let key in obj) {
+    //     if (obj.hasOwnProperty(key)) {
+    //         return false; 
+    //     }
+    // }
+
+    // return true;
+    // ----------------------------------------------------
+};
