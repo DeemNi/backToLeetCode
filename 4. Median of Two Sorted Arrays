@@ -1,0 +1,12 @@
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var findMedianSortedArrays = function (nums1, nums2) {
+    let fully = nums1.concat(nums2).sort((a, b) => a - b);
+
+    return fully.length % 2 != 0 ?
+        +fully[Math.ceil(fully.length / 2) - 1].toFixed(5) :
+        +(((fully[(fully.length / 2) - 1]) + (fully[fully.length / 2])) / 2).toFixed(5)
+};
