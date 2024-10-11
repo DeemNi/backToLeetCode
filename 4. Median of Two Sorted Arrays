@@ -4,7 +4,7 @@
  * @return {number}
  */
 var findMedianSortedArrays = function (nums1, nums2) {
-    let fully = nums1.concat(nums2).sort((a, b) => a - b);
+    let fully = nums1.concat(nums2).sort((a, b) => a - b); // need to change sort method coz if i use this code i will have 𝑂((𝑚+𝑛)log⁡(𝑚+𝑛))O((m+n)log(m+n)) complexity
 
     return fully.length % 2 != 0 ?
         +fully[Math.ceil(fully.length / 2) - 1].toFixed(5) :
