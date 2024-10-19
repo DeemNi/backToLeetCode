@@ -1,0 +1,11 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var getSneakyNumbers = function (nums) {
+    let result = {};
+    for(let num of nums){
+        result[num] = (result[num] || 0) + 1;
+    }
+    return nums.filter((num, index) => result[num] === 2 && nums.indexOf(num) === index);
+};
