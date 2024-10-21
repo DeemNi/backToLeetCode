@@ -1,0 +1,10 @@
+/**
+ * @param {number[]} height
+ * @param {number} threshold
+ * @return {number[]}
+ */
+var stableMountains = function (height, threshold) {
+    return stableMountain = height
+        .map((mountain, index) => (index > 0 && height[index - 1] > threshold ? index : -1))
+        .filter((item) => item != -1)
+};
