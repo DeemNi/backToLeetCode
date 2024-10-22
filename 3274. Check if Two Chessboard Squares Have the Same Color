@@ -1,0 +1,22 @@
+/**
+ * @param {string} coordinate1
+ * @param {string} coordinate2
+ * @return {boolean}
+ */
+var checkTwoChessboards = function (coordinate1, coordinate2) {
+    let chessLetter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+
+    let letterColor1 = chessLetter.indexOf(coordinate1.match(/[a-zA-Z]/gu)[0]) % 2 == 0 ? 'black' : 'white';
+    let letterColor2 = chessLetter.indexOf(coordinate2.match(/[a-zA-Z]/gu)[0]) % 2 == 0 ? 'black' : 'white';
+
+    if (letterColor1 == 'black') {
+        letterColor1 = coordinate1.match(/[0-9]/gu)[0] % 2 == 0 ? 'white' : 'black';
+    } else letterColor1 = coordinate1.match(/[0-9]/gu)[0] % 2 == 0 ? 'black' : 'white';
+
+    if (letterColor2 == 'black') {
+        letterColor2 = coordinate2.match(/[0-9]/gu)[0] % 2 == 0 ? 'white' : 'black';
+    } else letterColor2 = coordinate2.match(/[0-9]/gu)[0] % 2 == 0 ? 'black' : 'white';
+
+    return letterColor1 === letterColor2 ? true : false;
+
+};
