@@ -1,0 +1,14 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var isArraySpecial = function(nums) {
+    if(nums.length === 1) return true;
+    let i = 0;
+    while(i < nums.length - 1){
+        if((nums[i] % 2 == 0 && nums[i+1] % 2 != 0) || (nums[i] % 2 != 0 && nums[i+1] % 2 == 0)){
+            i++;
+        }else return false;
+    }
+    return true
+};
