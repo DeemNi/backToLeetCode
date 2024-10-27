@@ -1,0 +1,19 @@
+/**
+ * @param {string} command
+ * @return {string}
+ */
+var interpret = function(command) {
+    let result = [];
+    let i = 0;
+    while(command.length > i){
+        if(command[i].match(/[a-zA-Z]/) !== null){
+            result.push(command[i]);
+            i++;
+        } else if(command[i] == '(' && command[i+1] == ')' && command.length-1){
+            result.push('o');
+            i++;
+        } else i++;
+    }
+
+    return result.join('')
+};
